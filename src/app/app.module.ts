@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { CreateAutomataComponent } from './Automatas/Create/create-automata.comp
 import { DFA_Component } from './Automatas/DFA/dfa.component';
 import { ENFA_Component } from './Automatas/ENFA/enfa.component';
 import { REGEX_Component } from './Automatas/REGEX/regex.component';
-
+import { AutomataService } from './Automatas/Services/automata.service'
 
 
 @NgModule({
@@ -26,9 +27,13 @@ import { REGEX_Component } from './Automatas/REGEX/regex.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AutomataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
