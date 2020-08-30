@@ -5,6 +5,8 @@ import { DFA_Component } from './Automatas/DFA/dfa.component'
 import { ENFA_Component } from './Automatas/ENFA/enfa.component'
 import { REGEX_Component } from './Automatas/REGEX/regex.component'
 import { CreateAutomataComponent } from './Automatas/Create/create-automata.component'
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: 'dashboard', component: Dashboard },
@@ -16,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), BrowserModule,CommonModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
