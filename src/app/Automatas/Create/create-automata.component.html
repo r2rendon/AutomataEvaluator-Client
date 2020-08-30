@@ -11,13 +11,13 @@
             <br>
             <select formControlName="automataType" name="automata-type" id="automata-type" class="form-control w-25">
                 <option [ngValue]="null">Type</option>
-                <option [ngValue]="'DFA'">DFA</option>
-                <option [ngValue]="'ENFA'">ENFA</option>
-                <option [ngValue]="'REGEX'">Regular Expression</option>
+                <option [ngValue]="'dfa'">DFA</option>
+                <option [ngValue]="'enfa'">ENFA</option>
+                <option [ngValue]="'regex'">Regular Expression</option>
             </select>
         </div>
         <div *ngIf="this.automataType.value != null">
-            <div *ngIf="this.automataType.value == 'DFA'">
+            <div *ngIf="this.automataType.value == 'dfa'">
                 <div class="form-group">
                     <label for="automata-alphabet">Automata's Alphabet</label>
                     <input type="text" formControlName="automataAlphabet" class="form-control" id="automata-alphabet" placeholder="Ex: 0,1 or a,b,c">
