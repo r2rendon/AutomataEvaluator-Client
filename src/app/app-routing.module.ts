@@ -4,12 +4,14 @@ import { Dashboard } from './Dashboard/dashboard.component';
 import { DFA_Component } from './Automatas/DFA/dfa.component'
 import { ENFA_Component } from './Automatas/ENFA/enfa.component'
 import { REGEX_Component } from './Automatas/REGEX/regex.component'
+import { CreateAutomataComponent } from './Automatas/Create/create-automata.component'
 
 const routes: Routes = [
   { path: 'dashboard', component: Dashboard },
   { path: 'automata/dfa', component: DFA_Component},
   { path: 'automata/enfa', component: ENFA_Component},
   { path: 'automata/regex', component: REGEX_Component},
+  { path: 'automata/create', component: CreateAutomataComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
