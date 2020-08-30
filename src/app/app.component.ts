@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  template: `
+  <navbar></navbar>
+  <router-outlet></router-outlet>`,
 })
 export class AppComponent {
   title = 'AutomataEvaluator-Client';
