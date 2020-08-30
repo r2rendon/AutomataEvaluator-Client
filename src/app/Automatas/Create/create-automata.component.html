@@ -1,1 +1,46 @@
-<h1>Create</h1>
+<div class="container">
+    <h1 class="mt-2">Automata Builder</h1>
+
+    <form action="" [formGroup]="automataForm" (ngSubmit)="submitAutomata(automataForm.value)">
+        <div class="form-group">
+            <label for="automata-name">Automatas Name</label>
+            <input type="text" formControlName="automataName" class="form-control" id="automata-name" placeholder="Your Automata">
+        </div>
+        <div class="form-group">
+            <label for="automata-type">Automata Type</label>
+            <br>
+            <select formControlName="automataType" name="automata-type" id="automata-type" class="form-control w-25">
+                <option [ngValue]="null">Type</option>
+                <option [ngValue]="'DFA'">DFA</option>
+                <option [ngValue]="'ENFA'">ENFA</option>
+                <option [ngValue]="'REGEX'">Regular Expression</option>
+            </select>
+        </div>
+        <div *ngIf="this.automataType.value != null">
+            <div *ngIf="this.automataType.value == 'DFA'">
+                <div class="form-group">
+                    <label for="automata-alphabet">Automata's Alphabet</label>
+                    <input type="text" formControlName="automataAlphabet" class="form-control" id="automata-alphabet" placeholder="Ex: 0,1 or a,b,c">
+                </div>
+                <div class="form-group">
+                    <label for="automata-states">States</label>
+                    <input type="text" formControlName="automataStates" class="form-control" id="automata-states" placeholder="Ex: q0,q1,...">
+                </div>
+                <div class="form-group">
+                    <label for="automata-initialState">Initial State</label>
+                    <input type="text" formControlName="automataInitialState" class="form-control" id="automata-initialState" placeholder="Ex: q0">
+                    <small>Note: It can only be one</small>
+                </div>
+                <div class="form-group">
+                    <label for="automata-acceptingStates">Accepting States</label>
+                    <input type="text" formControlName="automataAcceptingStates" class="form-control" id="automata-acceptingStates" placeholder="Ex: q3,q7">
+                </div>
+                <div class="form-group" *ngIf="this.automataStates.value && this.automataAlphabet.value">
+                    <label for="automata-transitions">Transitions</label>
+                    <input type="text" formControlName="automataTransitions" class="form-control" id="automata-transitions" placeholder="Ex: fromThisState,alphabetLetter,toThisState;q0,1,q3;">
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </form>
+</div>
