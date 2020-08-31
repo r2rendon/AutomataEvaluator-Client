@@ -1,1 +1,15 @@
-<h1>DFA</h1>
+<div class="container">
+    <h1 class="mt-3">DFA</h1>
+
+    <div class="row">
+        <div class="card col-md-4" *ngFor="let automata of automatas" style="width: 18rem;">
+            <img class="card-img-top" src="{{automata.img}}">
+            <div class="card-body pt-0">
+              <h5 class="card-title">{{automata.name}}</h5>
+              <p class="card-text">Alphabet: {{automata.alphabet}}</p>
+              <p class="card-text">States: {{automata.states}}</p>
+              <a class="btn btn-primary btn-sm" (click)="goToAutomata(automata._id)">View</a>
+            </div>
+          </div>
+    </div>
+</div>
