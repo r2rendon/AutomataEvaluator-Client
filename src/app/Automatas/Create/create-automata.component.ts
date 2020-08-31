@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core"
 import { FormGroup, FormControl, Validators, FormControlDirective } from '@angular/forms'
+import { AutomataService } from '../Services/automata.service'
+import { Router } from '@angular/router'
 
 @Component({
     selector: 'create-automata',
@@ -18,7 +20,7 @@ export class CreateAutomataComponent implements OnInit {
     automataAcceptingStates: FormControl
     automataTransitions: FormControl
 
-    constructor(){
+    constructor(private service: AutomataService, private router: Router){
     }
 
     ngOnInit(){
@@ -44,5 +46,8 @@ export class CreateAutomataComponent implements OnInit {
 
     submitAutomata(formValues){
         console.log(formValues)
+        this.service.createAutomata(formValues).subscribe(data => {
+            this.router.navigate(['/automata/dfa'])
+        })
     }
 }
