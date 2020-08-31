@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="mt-3">{{automata.name}}</h1>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <img src="{{automata.img}}" class="img-fluid">
+        </div>
+
+        <div class="col-md-6 col-sm-12 pl-5 mt-5">
+            <p><b>Alphabet:</b> <br>{{automata.alphabet}}</p>
+            <p><b>States:</b> <br>{{automata.states}}</p>
+            <p><b>Initial State:</b> <br>{{automata.initial_state}}</p>
+            <p><b>Accepting States</b> <br>{{automata.accepting_states}}</p>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Letter</th>
+                    <th scope="col">Next State</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of transitionKeys, let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.split(',')[0]}}</td>
+                    <td>{{item.split(',')[1]}}</td>
+                    <td>{{this.automata.transitions[item]}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
