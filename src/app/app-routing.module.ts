@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 const routes: Routes = [
   { path: 'dashboard', component: Dashboard },
   { path: 'automata/dfa', component: DFA_Component},
+  { path: 'automata/dfa/:id', component: DFA_Component},
   { path: 'automata/enfa', component: ENFA_Component},
   { path: 'automata/regex', component: REGEX_Component},
   { path: 'automata/create', component: CreateAutomataComponent},
