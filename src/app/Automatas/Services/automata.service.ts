@@ -18,6 +18,10 @@ export class AutomataService {
         return this.http.get(this.api+`automata/${id}`)
     }
 
+    getEvaluation(id, type, expression){
+        return this.http.get(this.api+`/automatas/${type}/${id}/${expression}`)
+    }
+
     createAutomata(newAutomata){
         let options = {
             headers: new HttpHeaders({ "Content-Type": "application/json" })
