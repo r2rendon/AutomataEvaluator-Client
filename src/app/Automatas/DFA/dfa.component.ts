@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { AutomataService } from '../Services/automata.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'dfa',
@@ -10,7 +11,7 @@ export class DFA_Component implements OnInit {
     path_on_cloud = "automataImages/"
     automatas: Array<any>
 
-    constructor(private service: AutomataService){
+    constructor(private service: AutomataService, private router: Router){
 
     }
 
@@ -21,7 +22,7 @@ export class DFA_Component implements OnInit {
     }
 
     goToAutomata(id){
-        console.log(id)
+        this.router.navigate([`/automata/detail/${id}`])
     }
 
 }
