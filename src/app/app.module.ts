@@ -16,6 +16,7 @@ import { CreateAutomataComponent } from './Automatas/Create/create-automata.comp
 import { DFA_Component } from './Automatas/DFA/dfa.component';
 import { ENFA_Component } from './Automatas/ENFA/enfa.component';
 import { REGEX_Component } from './Automatas/REGEX/regex.component';
+import { DFA_DetailComponent } from './Automatas/DFA/Detail/dfa-detail.component'
 import { AutomataService } from './Automatas/Services/automata.service'
 
 const firebaseConfig = {
@@ -38,7 +39,7 @@ const firebaseConfig = {
     DFA_Component,
     ENFA_Component,
     REGEX_Component,
-    
+    DFA_DetailComponent
   ],
   imports: [
     BrowserModule,
