@@ -17,6 +17,16 @@ export class Dashboard implements OnInit {
   goToCreateAutomata(){
     this.router.navigate(['/automata/create'])
   }
+
+  goToAutomataPage(title){
+    if (title == "DFA")
+      this.router.navigate(['/automata/dfa'])
+    else if (title == "ENFA")
+      this.router.navigate(['/automata/enfa'])
+    else if (title == "Regular Expression")
+      this.router.navigate(['/automata/regex'])
+  }
+
 }
 
 const automatasArray = [

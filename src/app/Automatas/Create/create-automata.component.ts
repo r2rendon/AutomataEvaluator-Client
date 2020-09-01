@@ -46,8 +46,11 @@ export class CreateAutomataComponent implements OnInit {
 
     submitAutomata(formValues){
         console.log(formValues)
-        this.service.createAutomata(formValues).subscribe(data => {
-            this.router.navigate(['/automata/dfa'])
+        this.service.createAutomata(formValues).subscribe((data:any) => {
+            if (formValues.automataType == "dfa")
+                this.router.navigate(['/automata/dfa'])
+            else if(formValues.automataType == "enfa")
+                this.router.navigate(['/automata'])    
         })
     }
 }
