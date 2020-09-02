@@ -47,6 +47,30 @@ export class AutomataService {
             }
             return this.http.post(this.api+'automata', automataObj, options);
         }
+        else if(newAutomata.automataType == "enfa"){
+            const alphabet = newAutomata.automataAlphabet.split(',');
+            const states = newAutomata.automataStates.split(',');
+            const acceptingStates = newAutomata.automataAcceptingStates.split(',');
+            const transitionsSplit: Array<String> = newAutomata.automataTransitions.split(';');
+            let transitions = {};
+            transitionsSplit.forEach(transition => {
+                const split = transition.split(',');
+                console.log(split)
+                let transitionRes = split[2]
+                let newStates = [];
+                transitions[`${split[0]}, ${split[1]}`] = transitionRes
+            });
+            const automataObj = {
+                "type": newAutomata.automataType,
+                "name": newAutomata.automataName,
+                "alphabet": alphabet,
+                "states": states,
+                "initial_state": newAutomata.automataInitialState,
+                "accepting_states": acceptingStates,
+                "transitions": transitions
+            }
+            console.log(automataObj)
+        }
     }
 
 }

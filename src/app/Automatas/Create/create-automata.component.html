@@ -61,7 +61,7 @@
                 </div>
                 <div class="form-group" *ngIf="this.automataStates.value && this.automataAlphabet.value">
                     <label for="automata-transitions">Transitions</label>
-                    <input type="text" formControlName="automataTransitions" class="form-control" id="automata-transitions" placeholder="Ex: fromThisState,alphabetLetter,'toThisStates';q0,1,q3;">
+                    <input type="text" formControlName="automataTransitions" class="form-control" id="automata-transitions" placeholder="Ex: fromThisState,alphabetLetter,'toThisStates';q0,Ɛ,'q3';">
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
